@@ -6,139 +6,159 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Clases online de Primaria, ESO, Bachillerato y Universidad. Todas las ingenierías. Español e Inglés.">
 
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Fuente -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    html { scroll-behavior: smooth; }
+    .fade-up { opacity: 0; transform: translateY(40px); transition: all .8s ease; }
+    .fade-up.show { opacity: 1; transform: translateY(0); }
+  </style>
 
   <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-          }
-        }
-      }
+    document.addEventListener("DOMContentLoaded", () => {
+      const elements = document.querySelectorAll(".fade-up");
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add("show");
+        });
+      }, { threshold: 0.2 });
+      elements.forEach(el => observer.observe(el));
+    });
+
+    function toggle(id) {
+      document.getElementById(id).classList.toggle("hidden");
     }
   </script>
 </head>
 
-<body class="bg-gray-50 text-gray-900 font-sans">
+<body class="font-[Inter] bg-gray-50 text-gray-900">
+
+<!-- NAV -->
+<nav class="fixed w-full bg-white/90 backdrop-blur shadow z-50">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <span class="font-extrabold text-xl">Clases Online</span>
+    <div class="space-x-6 text-sm font-semibold hidden md:block">
+      <a href="#niveles" class="hover:text-blue-600">Materias</a>
+      <a href="#precios" class="hover:text-blue-600">Precios</a>
+      <a href="#contacto" class="hover:text-blue-600">Contacto</a>
+    </div>
+  </div>
+</nav>
 
 <!-- HERO -->
-<section class="min-h-screen flex flex-col justify-center items-center text-center px-6">
-  <h1 class="text-5xl font-bold mb-6">Clases Online Personalizadas</h1>
-  <p class="text-xl max-w-3xl mb-8 text-gray-600">
-    Primaria, ESO, Bachillerato y Universidad.  
-    Todas las ingenierías. Español e Inglés.  
-    Clases 100% online por Zoom.
-  </p>
-  <a href="#contacto" class="bg-blue-600 text-white px-8 py-4 rounded-xl text-lg hover:bg-blue-700 transition">
-    Reservar clase
-  </a>
-</section>
-
-<!-- SOBRE MI -->
-<section class="py-20 bg-white px-6">
-  <div class="max-w-5xl mx-auto">
-    <h2 class="text-3xl font-bold mb-6">Sobre las clases</h2>
-    <p class="text-gray-600 leading-relaxed">
-      Clases online totalmente personalizadas, adaptadas al nivel y objetivos del estudiante.
-      Se pueden trabajar varias materias dentro de una misma clase.
-      Metodología clara, práctica y orientada a resultados reales.
+<section class="min-h-screen flex items-center justify-center text-center px-6 bg-gradient-to-br from-blue-50 to-white">
+  <div class="fade-up max-w-4xl">
+    <h1 class="text-5xl md:text-6xl font-extrabold mb-6">
+      Clases Online <span class="text-blue-600">de Alto Nivel</span>
+    </h1>
+    <p class="text-xl text-gray-600 mb-10">
+      Primaria · ESO · Bachillerato · Universidad  
+      <br> Todas las ingenierías · Español e Inglés
     </p>
+    <a href="#contacto" class="bg-blue-600 text-white px-10 py-4 rounded-2xl text-lg hover:bg-blue-700 transition">
+      Reservar clase
+    </a>
   </div>
 </section>
 
 <!-- NIVELES -->
-<section class="py-20 bg-gray-100 px-6">
-  <div class="max-w-6xl mx-auto">
-    <h2 class="text-3xl font-bold mb-10 text-center">Niveles y materias</h2>
+<section id="niveles" class="py-24 px-6 max-w-6xl mx-auto">
+  <h2 class="text-4xl font-bold text-center mb-16 fade-up">Materias y niveles</h2>
 
-    <div class="space-y-8 text-gray-700">
+  <!-- CARD -->
+  <div class="space-y-6 fade-up">
 
-      <p><strong>Primaria:</strong> Todas las materias (Matemáticas, Lengua, Ciencias, Sociales, Inglés, refuerzo general).</p>
-
-      <p><strong>ESO:</strong> Todas las materias (Matemáticas, Lengua, Física y Química, Biología, Geografía e Historia, Inglés, Tecnología).</p>
-
-      <p><strong>Bachillerato de Ciencias (1º y 2º):</strong> Matemáticas, Física, Química, Dibujo Técnico, Tecnología.</p>
-
-      <p><strong>Bachillerato de Sociales (1º y 2º):</strong> Matemáticas, Economía, Inglés.</p>
-
-      <div>
-        <p class="font-semibold">Universidad – Ingenierías (todos los cursos):</p>
-        <p class="text-sm leading-relaxed mt-2">
-          Álgebra Lineal, Cálculo I–IV, Análisis Multivariable, Geometría Analítica y Descriptiva,
-          Estadística, Probabilidad, Bioestadística, Métodos Numéricos, Investigación de Operaciones,
-          Matemática Financiera, Física I–III, Física Moderna, Estática, Dinámica, Mecánica del Cuerpo Rígido,
-          Resistencia de Materiales I–II, Mecánica de Fluidos, Termodinámica, Turbomáquinas,
-          Estructuras I–II, Cargas y Estructuras, Circuitos Eléctricos, Ingeniería Eléctrica,
-          Programación (JavaScript, HTML, C++, Excel, Visual Basic),
-          Química I–II, Química Orgánica, Análisis Químico,
-          Geología General y Estructural, Mineralogía, Cristalografía,
-          Mecánica de Rocas I–II, Topografía General, Yacimientos de Minerales,
-          Dibujo Técnico, Expresión Gráfica, Economía General.
-        </p>
+    <div class="bg-white rounded-2xl shadow p-6">
+      <button onclick="toggle('primaria')" class="font-bold text-xl w-full text-left">
+        🎒 Primaria
+      </button>
+      <div id="primaria" class="hidden mt-4 text-gray-600">
+        Todas las materias: Matemáticas, Lengua, Ciencias, Sociales, Inglés, refuerzo general.
       </div>
-
     </div>
+
+    <div class="bg-white rounded-2xl shadow p-6">
+      <button onclick="toggle('eso')" class="font-bold text-xl w-full text-left">
+        📘 ESO
+      </button>
+      <div id="eso" class="hidden mt-4 text-gray-600">
+        Todas las materias: Matemáticas, Lengua, Física y Química, Biología, Historia, Inglés, Tecnología.
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow p-6">
+      <button onclick="toggle('bach')" class="font-bold text-xl w-full text-left">
+        🎓 Bachillerato
+      </button>
+      <div id="bach" class="hidden mt-4 text-gray-600">
+        <strong>Ciencias:</strong> Matemáticas, Física, Química, Dibujo Técnico, Tecnología.<br>
+        <strong>Sociales:</strong> Matemáticas, Economía, Inglés.
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow p-6">
+      <button onclick="toggle('uni')" class="font-bold text-xl w-full text-left">
+        🏛️ Universidad – Ingenierías
+      </button>
+      <div id="uni" class="hidden mt-4 text-sm text-gray-600 leading-relaxed">
+        Matemáticas (Álgebra, Cálculo I–IV, Análisis, Métodos Numéricos, Estadística),  
+        Física I–III, Mecánica, Estructuras, Fluidos, Termodinámica,  
+        Química, Geología, Programación, Electricidad, Dibujo Técnico, Topografía y más.
+      </div>
+    </div>
+
   </div>
 </section>
 
 <!-- PRECIOS -->
-<section class="py-20 bg-white px-6">
-  <div class="max-w-5xl mx-auto">
-    <h2 class="text-3xl font-bold mb-8 text-center">Precios (vigentes todo 2026)</h2>
-
-    <ul class="space-y-4 text-gray-700">
-      <li><strong>Primaria:</strong> 15€/hora · Bono 10: 130€ · Bono 20: 250€</li>
-      <li><strong>ESO y Bachillerato:</strong> 16€/hora · Bono 10: 140€ · Bono 20: 260€</li>
-      <li><strong>Universidad, FP y Docentes:</strong> 20€/hora · Bono 10: 190€ · Bono 20: 360€</li>
-    </ul>
-
-    <p class="mt-6 text-gray-600">
-      Clases online por Zoom · Reservas mediante pago por <strong>Bizum</strong>
-    </p>
-  </div>
-</section>
-
-<!-- IDIOMAS -->
-<section class="py-20 bg-gray-100 px-6">
-  <div class="max-w-5xl mx-auto">
-    <h2 class="text-3xl font-bold mb-6">Idiomas</h2>
-    <p class="text-gray-700">
-      Clases en español e inglés (nivel nativo).  
-      Sin problema con material en euskera o catalán.
-    </p>
+<section id="precios" class="bg-gray-100 py-24 px-6">
+  <div class="max-w-5xl mx-auto fade-up">
+    <h2 class="text-4xl font-bold mb-12 text-center">Precios 2026</h2>
+    <div class="grid md:grid-cols-3 gap-6 text-center">
+      <div class="bg-white p-8 rounded-2xl shadow">
+        <h3 class="font-bold text-xl mb-2">Primaria</h3>
+        <p>15 €/hora</p>
+        <p class="text-sm">Bono 10: 130 €</p>
+        <p class="text-sm">Bono 20: 250 €</p>
+      </div>
+      <div class="bg-white p-8 rounded-2xl shadow">
+        <h3 class="font-bold text-xl mb-2">ESO & Bach.</h3>
+        <p>16 €/hora</p>
+        <p class="text-sm">Bono 10: 140 €</p>
+        <p class="text-sm">Bono 20: 260 €</p>
+      </div>
+      <div class="bg-white p-8 rounded-2xl shadow">
+        <h3 class="font-bold text-xl mb-2">Universidad</h3>
+        <p>20 €/hora</p>
+        <p class="text-sm">Bono 10: 190 €</p>
+        <p class="text-sm">Bono 20: 360 €</p>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- CONTACTO -->
-<section id="contacto" class="py-20 bg-white px-6 text-center">
-  <h2 class="text-3xl font-bold mb-6">Contacto y reservas</h2>
-  <p class="text-gray-600 mb-6">
-    Escríbeme por WhatsApp para reservar tu clase.
-  </p>
-  <a href="https://wa.me/XXXXXXXXXX" class="bg-green-500 text-white px-8 py-4 rounded-xl text-lg hover:bg-green-600 transition">
-    Contactar por WhatsApp
+<section id="contacto" class="py-24 px-6 text-center fade-up">
+  <h2 class="text-4xl font-bold mb-6">Contacto</h2>
+  <p class="text-gray-600 mb-8">Clases online por Zoom · Pago por Bizum</p>
+  <a href="https://wa.me/XXXXXXXXXX" class="bg-green-500 text-white px-10 py-4 rounded-2xl text-lg hover:bg-green-600 transition">
+    WhatsApp
   </a>
 </section>
 
 <!-- TERMINOS -->
-<section class="py-12 text-center text-sm text-gray-500">
-  <button onclick="document.getElementById('terms').classList.toggle('hidden')" class="underline">
-    Términos y condiciones
-  </button>
-
+<footer class="py-10 text-center text-sm text-gray-500">
+  <button onclick="toggle('terms')" class="underline">Términos y condiciones</button>
   <div id="terms" class="hidden max-w-4xl mx-auto mt-6 text-left bg-gray-100 p-6 rounded-xl">
-    <p>Las modificaciones deben avisarse con 72h de antelación. Solo una modificación semanal.</p>
-    <p>La asistencia es responsabilidad del alumno. Tras 30 minutos sin acceso, la clase se da por finalizada.</p>
-    <p>Las clases duran 60 minutos cronológicos. Se pueden cambiar materias dentro de una misma clase.</p>
-    <p>No se admiten devoluciones dentro de los primeros 30 días.</p>
+    <p>Las modificaciones requieren 72h de aviso. Una por semana.</p>
+    <p>La asistencia es responsabilidad del alumno. Tras 30 min sin acceso, la clase finaliza.</p>
+    <p>Clases de 60 minutos. Se pueden tratar varias materias.</p>
+    <p>No hay devoluciones dentro de los primeros 30 días.</p>
   </div>
-</section>
-
-<footer class="py-6 text-center text-gray-500">
-  © 2025 · Clases Online
 </footer>
 
 </body>
