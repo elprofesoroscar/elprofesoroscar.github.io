@@ -2,10 +2,144 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Clases Online</title>
+  <title>Clases Online | Profesor Multidisciplinar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Clases online de Primaria, ESO, Bachillerato y Universidad. Todas las ingenierías. Español e Inglés.">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
 </head>
-<body>
-  <h1>Mi web funciona</h1>
-  <p>GitHub Pages ya está activo.</p>
+
+<body class="bg-gray-50 text-gray-900 font-sans">
+
+<!-- HERO -->
+<section class="min-h-screen flex flex-col justify-center items-center text-center px-6">
+  <h1 class="text-5xl font-bold mb-6">Clases Online Personalizadas</h1>
+  <p class="text-xl max-w-3xl mb-8 text-gray-600">
+    Primaria, ESO, Bachillerato y Universidad.  
+    Todas las ingenierías. Español e Inglés.  
+    Clases 100% online por Zoom.
+  </p>
+  <a href="#contacto" class="bg-blue-600 text-white px-8 py-4 rounded-xl text-lg hover:bg-blue-700 transition">
+    Reservar clase
+  </a>
+</section>
+
+<!-- SOBRE MI -->
+<section class="py-20 bg-white px-6">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-3xl font-bold mb-6">Sobre las clases</h2>
+    <p class="text-gray-600 leading-relaxed">
+      Clases online totalmente personalizadas, adaptadas al nivel y objetivos del estudiante.
+      Se pueden trabajar varias materias dentro de una misma clase.
+      Metodología clara, práctica y orientada a resultados reales.
+    </p>
+  </div>
+</section>
+
+<!-- NIVELES -->
+<section class="py-20 bg-gray-100 px-6">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl font-bold mb-10 text-center">Niveles y materias</h2>
+
+    <div class="space-y-8 text-gray-700">
+
+      <p><strong>Primaria:</strong> Todas las materias (Matemáticas, Lengua, Ciencias, Sociales, Inglés, refuerzo general).</p>
+
+      <p><strong>ESO:</strong> Todas las materias (Matemáticas, Lengua, Física y Química, Biología, Geografía e Historia, Inglés, Tecnología).</p>
+
+      <p><strong>Bachillerato de Ciencias (1º y 2º):</strong> Matemáticas, Física, Química, Dibujo Técnico, Tecnología.</p>
+
+      <p><strong>Bachillerato de Sociales (1º y 2º):</strong> Matemáticas, Economía, Inglés.</p>
+
+      <div>
+        <p class="font-semibold">Universidad – Ingenierías (todos los cursos):</p>
+        <p class="text-sm leading-relaxed mt-2">
+          Álgebra Lineal, Cálculo I–IV, Análisis Multivariable, Geometría Analítica y Descriptiva,
+          Estadística, Probabilidad, Bioestadística, Métodos Numéricos, Investigación de Operaciones,
+          Matemática Financiera, Física I–III, Física Moderna, Estática, Dinámica, Mecánica del Cuerpo Rígido,
+          Resistencia de Materiales I–II, Mecánica de Fluidos, Termodinámica, Turbomáquinas,
+          Estructuras I–II, Cargas y Estructuras, Circuitos Eléctricos, Ingeniería Eléctrica,
+          Programación (JavaScript, HTML, C++, Excel, Visual Basic),
+          Química I–II, Química Orgánica, Análisis Químico,
+          Geología General y Estructural, Mineralogía, Cristalografía,
+          Mecánica de Rocas I–II, Topografía General, Yacimientos de Minerales,
+          Dibujo Técnico, Expresión Gráfica, Economía General.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PRECIOS -->
+<section class="py-20 bg-white px-6">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-3xl font-bold mb-8 text-center">Precios (vigentes todo 2026)</h2>
+
+    <ul class="space-y-4 text-gray-700">
+      <li><strong>Primaria:</strong> 15€/hora · Bono 10: 130€ · Bono 20: 250€</li>
+      <li><strong>ESO y Bachillerato:</strong> 16€/hora · Bono 10: 140€ · Bono 20: 260€</li>
+      <li><strong>Universidad, FP y Docentes:</strong> 20€/hora · Bono 10: 190€ · Bono 20: 360€</li>
+    </ul>
+
+    <p class="mt-6 text-gray-600">
+      Clases online por Zoom · Reservas mediante pago por <strong>Bizum</strong>
+    </p>
+  </div>
+</section>
+
+<!-- IDIOMAS -->
+<section class="py-20 bg-gray-100 px-6">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-3xl font-bold mb-6">Idiomas</h2>
+    <p class="text-gray-700">
+      Clases en español e inglés (nivel nativo).  
+      Sin problema con material en euskera o catalán.
+    </p>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" class="py-20 bg-white px-6 text-center">
+  <h2 class="text-3xl font-bold mb-6">Contacto y reservas</h2>
+  <p class="text-gray-600 mb-6">
+    Escríbeme por WhatsApp para reservar tu clase.
+  </p>
+  <a href="https://wa.me/XXXXXXXXXX" class="bg-green-500 text-white px-8 py-4 rounded-xl text-lg hover:bg-green-600 transition">
+    Contactar por WhatsApp
+  </a>
+</section>
+
+<!-- TERMINOS -->
+<section class="py-12 text-center text-sm text-gray-500">
+  <button onclick="document.getElementById('terms').classList.toggle('hidden')" class="underline">
+    Términos y condiciones
+  </button>
+
+  <div id="terms" class="hidden max-w-4xl mx-auto mt-6 text-left bg-gray-100 p-6 rounded-xl">
+    <p>Las modificaciones deben avisarse con 72h de antelación. Solo una modificación semanal.</p>
+    <p>La asistencia es responsabilidad del alumno. Tras 30 minutos sin acceso, la clase se da por finalizada.</p>
+    <p>Las clases duran 60 minutos cronológicos. Se pueden cambiar materias dentro de una misma clase.</p>
+    <p>No se admiten devoluciones dentro de los primeros 30 días.</p>
+  </div>
+</section>
+
+<footer class="py-6 text-center text-gray-500">
+  © 2025 · Clases Online
+</footer>
+
 </body>
 </html>
