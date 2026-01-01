@@ -2,9 +2,17 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+
   <title>Profesor Online de Matemáticas, Física e Ingeniería | Clases Online</title>
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Profesor online con experiencia en Primaria, ESO, Bachillerato y Universidad. Clases de matemáticas, física, química e ingeniería. Español e inglés.">
+  <meta name="description" content="Profesor online con experiencia en Primaria, ESO, Bachillerato y Universidad. Clases de matemáticas, física, química e ingeniería en español e inglés.">
+
+  <!-- SEO -->
+  <link rel="canonical" href="https://crinoxos.github.io/">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico">
 
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -12,42 +20,28 @@
   <!-- Fuente -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-  <style>
-    html { scroll-behavior: smooth; }
-    .fade-up { opacity: 0; transform: translateY(40px); transition: all .8s ease; }
-    .fade-up.show { opacity: 1; transform: translateY(0); }
-  </style>
+  <!-- CSS propio -->
+  <link rel="stylesheet" href="css/styles.css">
 
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const elements = document.querySelectorAll(".fade-up");
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) entry.target.classList.add("show");
-        });
-      }, { threshold: 0.2 });
-      elements.forEach(el => observer.observe(el));
-    });
-
-    function toggle(id) {
-      document.getElementById(id).classList.toggle("hidden");
-    }
-  </script>
 </head>
 
 <body class="font-[Inter] bg-gray-50 text-gray-900">
 
 <!-- NAV -->
-<nav class="fixed w-full bg-white/90 backdrop-blur shadow z-50">
-  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-    <span class="font-extrabold text-xl">Clases Online</span>
-    <div class="space-x-6 text-sm font-semibold hidden md:block">
-      <a href="#niveles" class="hover:text-blue-600">Materias</a>
-      <a href="#precios" class="hover:text-blue-600">Precios</a>
-      <a href="#contacto" class="hover:text-blue-600">Contacto</a>
+<header>
+  <nav class="fixed w-full bg-white/90 backdrop-blur shadow z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <span class="font-extrabold text-xl">Clases Online</span>
+      <div class="space-x-6 text-sm font-semibold hidden md:block">
+        <a href="#niveles" class="hover:text-blue-600">Materias</a>
+        <a href="#precios" class="hover:text-blue-600">Precios</a>
+        <a href="#contacto" class="hover:text-blue-600">Contacto</a>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
+</header>
+
+<main>
 
 <!-- HERO -->
 <section class="min-h-screen flex items-center justify-center text-center px-6 bg-gradient-to-br from-blue-50 to-white">
@@ -57,9 +51,9 @@
     </h1>
     <p class="text-xl text-gray-600 mb-10">
       Primaria · ESO · Bachillerato · Universidad  
-      <br> Todas las ingenierías · Español e Inglés
+      <br> Ingenierías · Español e Inglés
     </p>
-    <a href="#contacto" class="bg-blue-600 text-white px-10 py-4 rounded-2xl text-lg hover:bg-blue-700 transition">
+    <a href="#contacto" class="btn-primary">
       Reservar clase
     </a>
   </div>
@@ -67,47 +61,36 @@
 
 <!-- NIVELES -->
 <section id="niveles" class="py-24 px-6 max-w-6xl mx-auto">
-  <h2 class="text-4xl font-bold text-center mb-16 fade-up">Materias y niveles</h2>
+  <h2 class="section-title fade-up">Materias y niveles</h2>
 
-  <!-- CARD -->
   <div class="space-y-6 fade-up">
 
-    <div class="bg-white rounded-2xl shadow p-6">
-      <button onclick="toggle('primaria')" class="font-bold text-xl w-full text-left">
-        🎒 Primaria
-      </button>
-      <div id="primaria" class="hidden mt-4 text-gray-600">
+    <div class="card">
+      <button onclick="toggle('primaria')" class="card-title">🎒 Primaria</button>
+      <div id="primaria" class="hidden card-content">
         Todas las materias: Matemáticas, Lengua, Ciencias, Sociales, Inglés, refuerzo general.
       </div>
     </div>
 
-    <div class="bg-white rounded-2xl shadow p-6">
-      <button onclick="toggle('eso')" class="font-bold text-xl w-full text-left">
-        📘 ESO
-      </button>
-      <div id="eso" class="hidden mt-4 text-gray-600">
-        Todas las materias: Matemáticas, Lengua, Física y Química, Biología, Historia, Inglés, Tecnología.
+    <div class="card">
+      <button onclick="toggle('eso')" class="card-title">📘 ESO</button>
+      <div id="eso" class="hidden card-content">
+        Matemáticas, Lengua, Física y Química, Biología, Historia, Inglés, Tecnología.
       </div>
     </div>
 
-    <div class="bg-white rounded-2xl shadow p-6">
-      <button onclick="toggle('bach')" class="font-bold text-xl w-full text-left">
-        🎓 Bachillerato
-      </button>
-      <div id="bach" class="hidden mt-4 text-gray-600">
-        <strong>Ciencias:</strong> Matemáticas, Física, Química, Dibujo Técnico, Tecnología.<br>
+    <div class="card">
+      <button onclick="toggle('bach')" class="card-title">🎓 Bachillerato</button>
+      <div id="bach" class="hidden card-content">
+        <strong>Ciencias:</strong> Matemáticas, Física, Química, Dibujo Técnico.<br>
         <strong>Sociales:</strong> Matemáticas, Economía, Inglés.
       </div>
     </div>
 
-    <div class="bg-white rounded-2xl shadow p-6">
-      <button onclick="toggle('uni')" class="font-bold text-xl w-full text-left">
-        🏛️ Universidad – Ingenierías
-      </button>
-      <div id="uni" class="hidden mt-4 text-sm text-gray-600 leading-relaxed">
-        Matemáticas (Álgebra, Cálculo I–IV, Análisis, Métodos Numéricos, Estadística),  
-        Física I–III, Mecánica, Estructuras, Fluidos, Termodinámica,  
-        Química, Geología, Programación, Electricidad, Dibujo Técnico, Topografía y más.
+    <div class="card">
+      <button onclick="toggle('uni')" class="card-title">🏛️ Universidad – Ingenierías</button>
+      <div id="uni" class="hidden card-content text-sm leading-relaxed">
+        Álgebra, Cálculo, Física, Mecánica, Estructuras, Programación, Electricidad, Topografía y más.
       </div>
     </div>
 
@@ -117,25 +100,25 @@
 <!-- PRECIOS -->
 <section id="precios" class="bg-gray-100 py-24 px-6">
   <div class="max-w-5xl mx-auto fade-up">
-    <h2 class="text-4xl font-bold mb-12 text-center">Precios 2026</h2>
+    <h2 class="section-title">Precios 2026</h2>
+
     <div class="grid md:grid-cols-3 gap-6 text-center">
-      <div class="bg-white p-8 rounded-2xl shadow">
-        <h3 class="font-bold text-xl mb-2">Primaria</h3>
+      <div class="price-card">
+        <h3>Primaria</h3>
         <p>15 €/hora</p>
-        <p class="text-sm">Bono 10: 130 €</p>
-        <p class="text-sm">Bono 20: 250 €</p>
+        <small>Bono 10: 130 € · Bono 20: 250 €</small>
       </div>
-      <div class="bg-white p-8 rounded-2xl shadow">
-        <h3 class="font-bold text-xl mb-2">ESO & Bach.</h3>
+
+      <div class="price-card">
+        <h3>ESO & Bach.</h3>
         <p>16 €/hora</p>
-        <p class="text-sm">Bono 10: 140 €</p>
-        <p class="text-sm">Bono 20: 260 €</p>
+        <small>Bono 10: 140 € · Bono 20: 260 €</small>
       </div>
-      <div class="bg-white p-8 rounded-2xl shadow">
-        <h3 class="font-bold text-xl mb-2">Universidad</h3>
+
+      <div class="price-card">
+        <h3>Universidad</h3>
         <p>20 €/hora</p>
-        <p class="text-sm">Bono 10: 190 €</p>
-        <p class="text-sm">Bono 20: 360 €</p>
+        <small>Bono 10: 190 € · Bono 20: 360 €</small>
       </div>
     </div>
   </div>
@@ -143,23 +126,25 @@
 
 <!-- CONTACTO -->
 <section id="contacto" class="py-24 px-6 text-center fade-up">
-  <h2 class="text-4xl font-bold mb-6">Contacto</h2>
+  <h2 class="section-title">Contacto</h2>
   <p class="text-gray-600 mb-8">Clases online por Zoom · Pago por Bizum</p>
-  <a href="https://wa.me/XXXXXXXXXX" class="bg-green-500 text-white px-10 py-4 rounded-2xl text-lg hover:bg-green-600 transition">
+  <a href="https://wa.me/XXXXXXXXXX" class="btn-whatsapp">
     WhatsApp
   </a>
 </section>
 
-<!-- TERMINOS -->
+</main>
+
 <footer class="py-10 text-center text-sm text-gray-500">
   <button onclick="toggle('terms')" class="underline">Términos y condiciones</button>
   <div id="terms" class="hidden max-w-4xl mx-auto mt-6 text-left bg-gray-100 p-6 rounded-xl">
-    <p>Las modificaciones requieren 72h de aviso. Una por semana.</p>
-    <p>La asistencia es responsabilidad del alumno. Tras 30 min sin acceso, la clase finaliza.</p>
-    <p>Clases de 60 minutos. Se pueden tratar varias materias.</p>
-    <p>No hay devoluciones dentro de los primeros 30 días.</p>
+    <p>Las modificaciones requieren 72h de aviso.</p>
+    <p>Clases de 60 minutos. Sin devoluciones tras 30 días.</p>
   </div>
 </footer>
+
+<!-- JS -->
+<script src="js/main.js"></script>
 
 </body>
 </html>
