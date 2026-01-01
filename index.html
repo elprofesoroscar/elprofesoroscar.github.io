@@ -2,149 +2,90 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-
-  <title>Profesor Online de Matemáticas, Física e Ingeniería | Clases Online</title>
-
+  <title>Clases Online – Profesor Oscar</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Profesor online con experiencia en Primaria, ESO, Bachillerato y Universidad. Clases de matemáticas, física, química e ingeniería en español e inglés.">
-
-  <!-- SEO -->
-  <link rel="canonical" href="https://crinoxos.github.io/">
-
-  <!-- Favicon -->
-  <link rel="icon" href="/favicon.ico">
-
-  <!-- Tailwind -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Fuente -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- CSS propio -->
-  <link rel="stylesheet" href="css/styles.css">
-
+  <meta name="description" content="Clases online de ESO, Bachillerato y Universidad. Matemáticas, Física, Química y más. Profesor Oscar.">
+  <link rel="stylesheet" href="style.css">
 </head>
+<body>
 
-<body class="font-[Inter] bg-gray-50 text-gray-900">
-
-<!-- NAV -->
-<header>
-  <nav class="fixed w-full bg-white/90 backdrop-blur shadow z-50">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-      <span class="font-extrabold text-xl">Clases Online</span>
-      <div class="space-x-6 text-sm font-semibold hidden md:block">
-        <a href="#niveles" class="hover:text-blue-600">Materias</a>
-        <a href="#precios" class="hover:text-blue-600">Precios</a>
-        <a href="#contacto" class="hover:text-blue-600">Contacto</a>
-      </div>
-    </div>
-  </nav>
+<header class="hero">
+  <img src="assets/logo.png" alt="Profesor Oscar" class="logo">
+  <h1>Clases Online Personalizadas</h1>
+  <p>ESO · Bachillerato · Universidad</p>
+  <button class="btn-primary" onclick="openModal()">Contactar por WhatsApp</button>
 </header>
 
-<main>
+<section class="section">
+  <h2>Niveles Educativos</h2>
 
-<!-- HERO -->
-<section class="min-h-screen flex items-center justify-center text-center px-6 bg-gradient-to-br from-blue-50 to-white">
-  <div class="fade-up max-w-4xl">
-    <h1 class="text-5xl md:text-6xl font-extrabold mb-6">
-      Clases Online <span class="text-blue-600">de Alto Nivel</span>
-    </h1>
-    <p class="text-xl text-gray-600 mb-10">
-      Primaria · ESO · Bachillerato · Universidad  
-      <br> Ingenierías · Español e Inglés
-    </p>
-    <a href="#contacto" class="btn-primary">
-      Reservar clase
-    </a>
-  </div>
-</section>
-
-<!-- NIVELES -->
-<section id="niveles" class="py-24 px-6 max-w-6xl mx-auto">
-  <h2 class="section-title fade-up">Materias y niveles</h2>
-
-  <div class="space-y-6 fade-up">
-
+  <div class="levels">
     <div class="card">
-      <button onclick="toggle('primaria')" class="card-title">🎒 Primaria</button>
-      <div id="primaria" class="hidden card-content">
-        Todas las materias: Matemáticas, Lengua, Ciencias, Sociales, Inglés, refuerzo general.
-      </div>
+      <h3>ESO</h3>
+      <p>Matemáticas · Física · Lengua · Química · Inglés</p>
+      <span class="price">16 €/hora</span>
+      <button onclick="openModal()">Solicitar información</button>
     </div>
 
     <div class="card">
-      <button onclick="toggle('eso')" class="card-title">📘 ESO</button>
-      <div id="eso" class="hidden card-content">
-        Matemáticas, Lengua, Física y Química, Biología, Historia, Inglés, Tecnología.
-      </div>
+      <h3>Bachillerato</h3>
+      <p>Matemáticas · Física · Química · Dibujo Técnico</p>
+      <span class="price">16 €/hora</span>
+      <button onclick="openModal()">Solicitar información</button>
     </div>
 
     <div class="card">
-      <button onclick="toggle('bach')" class="card-title">🎓 Bachillerato</button>
-      <div id="bach" class="hidden card-content">
-        <strong>Ciencias:</strong> Matemáticas, Física, Química, Dibujo Técnico.<br>
-        <strong>Sociales:</strong> Matemáticas, Economía, Inglés.
-      </div>
-    </div>
-
-    <div class="card">
-      <button onclick="toggle('uni')" class="card-title">🏛️ Universidad – Ingenierías</button>
-      <div id="uni" class="hidden card-content text-sm leading-relaxed">
-        Álgebra, Cálculo, Física, Mecánica, Estructuras, Programación, Electricidad, Topografía y más.
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- PRECIOS -->
-<section id="precios" class="bg-gray-100 py-24 px-6">
-  <div class="max-w-5xl mx-auto fade-up">
-    <h2 class="section-title">Precios 2026</h2>
-
-    <div class="grid md:grid-cols-3 gap-6 text-center">
-      <div class="price-card">
-        <h3>Primaria</h3>
-        <p>15 €/hora</p>
-        <small>Bono 10: 130 € · Bono 20: 250 €</small>
-      </div>
-
-      <div class="price-card">
-        <h3>ESO & Bach.</h3>
-        <p>16 €/hora</p>
-        <small>Bono 10: 140 € · Bono 20: 260 €</small>
-      </div>
-
-      <div class="price-card">
-        <h3>Universidad</h3>
-        <p>20 €/hora</p>
-        <small>Bono 10: 190 € · Bono 20: 360 €</small>
-      </div>
+      <h3>Universidad</h3>
+      <p>Asignaturas técnicas y científicas</p>
+      <span class="price">Consultar</span>
+      <button onclick="openModal()">Solicitar información</button>
     </div>
   </div>
 </section>
 
-<!-- CONTACTO -->
-<section id="contacto" class="py-24 px-6 text-center fade-up">
-  <h2 class="section-title">Contacto</h2>
-  <p class="text-gray-600 mb-8">Clases online por Zoom · Pago por Bizum</p>
-  <a href="https://wa.me/XXXXXXXXXX" class="btn-whatsapp">
-    WhatsApp
-  </a>
+<section class="section light">
+  <h2>Mi método de enseñanza</h2>
+  <p>
+    Soy Oscar, profesor e ingeniero con más de 10 años de experiencia.
+    Mis clases son 100 % online por Zoom, utilizando pizarra electrónica.
+  </p>
+  <ul class="method">
+    <li>✔ Explicaciones claras y paso a paso</li>
+    <li>✔ Resolución de problemas y razonamiento lógico</li>
+    <li>✔ Preparación específica para exámenes</li>
+    <li>✔ Todas las preguntas que hagan falta</li>
+  </ul>
 </section>
 
-</main>
-
-<footer class="py-10 text-center text-sm text-gray-500">
-  <button onclick="toggle('terms')" class="underline">Términos y condiciones</button>
-  <div id="terms" class="hidden max-w-4xl mx-auto mt-6 text-left bg-gray-100 p-6 rounded-xl">
-    <p>Las modificaciones requieren 72h de aviso.</p>
-    <p>Clases de 60 minutos. Sin devoluciones tras 30 días.</p>
+<section class="section">
+  <h2>Precios</h2>
+  <div class="prices">
+    <div>Clase suelta: <strong>16 € / hora</strong></div>
+    <div>Bono 10 horas: <strong>140 €</strong></div>
+    <div>Bono 20 horas: <strong>260 €</strong></div>
+    <small>* Bonos no aplicables a nivel universitario</small>
   </div>
+</section>
+
+<footer>
+  <p>© Profesor Oscar · Clases Online</p>
 </footer>
 
-<!-- JS -->
-<script src="js/main.js"></script>
+<!-- MODAL -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">×</span>
+    <h3>Contacto por WhatsApp</h3>
 
+    <input type="text" id="name" placeholder="Nombre">
+    <input type="text" id="level" placeholder="Nivel de estudios">
+    <input type="text" id="subject" placeholder="Asignaturas">
+    <input type="text" id="schedule" placeholder="Horario de interés">
+
+    <button class="btn-primary" onclick="sendWhatsApp()">Enviar</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
 </body>
-</html>
+</
