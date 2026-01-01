@@ -1,2 +1,2 @@
-# crinoxos.github.io
+# elprofesoroscar.github.io
 Website to promote my classes
